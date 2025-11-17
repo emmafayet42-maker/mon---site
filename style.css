@@ -9,7 +9,7 @@ body {
 
 /* En-tête et navigation */
 header {
-    background-color: #0077ff;
+    background-color: #F7A8A8;
     color: white;
     padding: 15px;
     text-align: center;
@@ -72,4 +72,5 @@ footer {
     background-color: #eee;
     margin-top: 40px;
 }
+
 

@@ -3,110 +3,187 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="lktdaae33SlXKRhRpfHaSN_Bugiac7RMiAkxbFCwicA" />
   <title>Accueil – Passions Sports & Tech | Emma Fayet</title>
 
-  <!-- SEO -->
-  <meta name="description" content="Découvrez les passions d'Emma Fayet : basket, VTT, course à pied et informatique. Explorez ses univers et ses projets créatifs.">
-  <meta name="keywords" content="basket, VTT, course à pied, informatique, sport, technologie, Emma Fayet, site web">
-  <meta name="author" content="Emma Fayet">
-  <meta name="robots" content="index, follow">
-
-  <!-- Open Graph pour réseaux sociaux -->
-  <meta property="og:title" content="Accueil – Passions Sports & Tech | Emma Fayet">
-  <meta property="og:description" content="Explorez les passions et univers d'Emma Fayet : sport et technologie.">
-  <meta property="og:image" content="URL_DE_TON_IMAGE_HERO"> <!-- à remplacer par une image représentative -->
-  <meta property="og:url" content="https://emmafayet42-maker.github.io/mon---site/index.html">
-  <meta property="og:type" content="website">
-
   <style>
-    body {
+    /* ----------- RESET ----------- */
+    * {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #111;
-      color: #fff;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: #0d0d0d;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    /* ----------- HEADER ----------- */
     header {
-      background: #000;
-      padding: 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
+      backdrop-filter: blur(10px);
+      background: rgba(0, 0, 0, 0.5);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
       z-index: 1000;
-      border-bottom: 2px solid #222;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 1.8rem;
+      font-size: 1.7rem;
+      font-weight: 600;
     }
+
     nav a {
-      color: #fff;
+      color: white;
       text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
+      margin-left: 25px;
       padding: 8px 12px;
-      border-radius: 5px;
+      border-radius: 6px;
       transition: 0.3s;
     }
+
     nav a:hover,
     nav a.active {
-      background: #333;
+      background: rgba(255,255,255,0.15);
     }
+
+    /* ----------- HERO ----------- */
     .hero {
-      height: 75vh;
-      background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1599058917212-d750089bc09c') center/cover;
+      height: 80vh;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+      url('https://images.unsplash.com/photo-1599058917212-d750089bc09c') center/cover;
       display: flex;
       justify-content: center;
       align-items: center;
       flex-direction: column;
       text-align: center;
       padding: 20px;
+      animation: fadeIn 1.8s ease-out;
     }
+
     .hero h2 {
-      font-size: 3rem;
-      margin: 0;
+      font-size: 3.5rem;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px black;
+      animation: slideFromTop 1.6s ease-out;
     }
+
     .hero p {
-      font-size: 1.3rem;
-      margin-top: 10px;
+      margin-top: 20px;
+      font-size: 1.4rem;
+      opacity: 0.9;
+      animation: slideFromBottom 1.6s ease-out;
     }
+
+    /* ----------- GRID CARDS ----------- */
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      padding: 80px 30px;
+      max-width: 1200px;
       margin: auto;
     }
+
+    .title-center {
+      text-align: center;
+      font-size: 2.4rem;
+      margin-bottom: 50px;
+      letter-spacing: 1px;
+    }
+
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 35px;
     }
+
     .card {
       background: #1a1a1a;
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-      transition: 0.3s;
+      border-radius: 14px;
+      padding-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+      transform: translateY(40px);
+      opacity: 0;
+      transition: 0.6s ease;
     }
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+
+    .card.visible {
+      transform: translateY(0);
+      opacity: 1;
     }
+
     .card img {
       width: 100%;
-      border-radius: 10px;
-      margin-bottom: 15px;
+      height: 180px;
+      object-fit: cover;
+      transition: 0.5s;
     }
+
+    .card:hover img {
+      transform: scale(1.08);
+      filter: brightness(1.15);
+    }
+
+    .card h3 {
+      margin: 15px;
+      font-size: 1.4rem;
+    }
+
+    .card p {
+      margin: 0 15px 10px;
+      opacity: 0.8;
+      line-height: 1.4;
+    }
+
+    /* ----------- MOT D'ACCUEIL ----------- */
+    .quote {
+      text-align: center;
+      margin-top: 40px;
+      animation: fadeIn 2s ease-out;
+    }
+
+    .quote img {
+      margin-top: 20px;
+      width: 260px;
+      border-radius: 10px;
+      box-shadow: 0 5px 20px rgba(255,255,255,0.1);
+    }
+
+    /* ----------- FOOTER ----------- */
     footer {
       text-align: center;
-      padding: 20px;
+      padding: 25px;
       background: #000;
-      margin-top: 40px;
+      margin-top: 50px;
+      border-top: 1px solid #222;
+    }
+
+    /* ----------- ANIMATIONS ----------- */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideFromTop {
+      from { opacity: 0; transform: translateY(-40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideFromBottom {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
+
 <body>
+
   <header>
     <h1>Passions Sports & Technologies</h1>
     <nav>
@@ -118,49 +195,68 @@
 
   <div class="hero">
     <h2>Bienvenue sur mon site !</h2>
-    <p> • Basket • VTT • Course à pied • Informatique</p>
+    <p>• Basket • VTT • Course à pied • Informatique •</p>
   </div>
 
   <section>
-    <h2 style="text-align:center; margin-bottom:40px;">Mes univers</h2>
+    <h2 class="title-center">Mes univers</h2>
+
     <div class="grid">
-      <div class="card">
-        <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2024/08/11/image-cbd5e828-dcec-4c8a-af99-fde317618081-85-2560-1440.jpeg" alt="Joueur de basket en action">
+      <div class="card scroll-anim">
+        <img src="https://imgresizer.eurosport.com/unsafe/1200x0/filters:format(jpeg)/origin-imgresizer.eurosport.com/2024/08/11/image-cbd5e828-dcec-4c8a-af99-fde317618081-85-2560-1440.jpeg">
         <h3>Basket</h3>
-        <p>Tout ce qui touche à la passion du jeu, du mouvement et du collectif.</p>
+        <p>La passion du jeu, du collectif et de l'énergie !</p>
       </div>
 
-      <div class="card">
-        <img src="https://docs.montagne-vacances.com/actualites/medium/les-plus-grands-evenements-vtt-en-station-2290.jpg" alt="VTT en montagne">
+      <div class="card scroll-anim">
+        <img src="https://docs.montagne-vacances.com/actualites/medium/les-plus-grands-evenements-vtt-en-station-2290.jpg">
         <h3>VTT</h3>
-        <p>La liberté des sentiers, l'adrénaline et la nature.</p>
+        <p>L'adrénaline des descentes et la liberté des sentiers.</p>
       </div>
 
-      <div class="card">
-        <img src="https://www.bioalaune.com/img/article/35639-une-heure-course-pied-rallonge-vie-7-heures.png" alt="Course à pied">
+      <div class="card scroll-anim">
+        <img src="https://www.bioalaune.com/img/article/35639-une-heure-course-pied-rallonge-vie-7-heures.png">
         <h3>Course à pied</h3>
-        <p>Repousser ses limites, seul face au rythme et au souffle.</p>
+        <p>Repousser ses limites, un pas après l’autre.</p>
       </div>
 
-      <div class="card">
-        <img src="https://ts2i.ac-besancon.fr/wp-content/uploads/sites/97/2022/05/technology-3389904_1920.jpg" alt="Technologie et informatique">
+      <div class="card scroll-anim">
+        <img src="https://ts2i.ac-besancon.fr/wp-content/uploads/sites/97/2022/05/technology-3389904_1920.jpg">
         <h3>Informatique</h3>
-        <p>Programmation, innovation et numérique.</p>
+        <p>Programmation, innovation et créativité numérique.</p>
       </div>
     </div>
   </section>
 
-  <section style="text-align:center; margin-top:50px;">
+  <section class="quote">
     <h2>Un petit mot d'accueil</h2>
     <p>Avancer, progresser, créer 🎉</p>
-    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/never-give-up-design-template-2b24724517bab7f17a2408c0972b6dd7_screen.jpg?ts=1695177059" alt="Never give up" style="margin-top:20px; border-radius:10px;">
+    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/never-give-up-design-template-2b24724517bab7f17a2408c0972b6dd7_screen.jpg?ts=1695177059">
   </section>
 
   <footer>
     © 2025 • Mon site Web
   </footer>
+
+
+  <!-- ----------- SCRIPT ANIMATIONS SCROLL ----------- -->
+  <script>
+    const cards = document.querySelectorAll('.scroll-anim');
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.3 });
+
+    cards.forEach(card => observer.observe(card));
+  </script>
+
 </body>
 </html>
+
 
 
 

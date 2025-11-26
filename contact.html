@@ -5,162 +5,174 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact – Passions Sports & Tech | Emma Fayet</title>
 
-    <!-- SEO & Référencement -->
-    <meta name="description" content="Contactez Emma Fayet, passionnée de sport et de technologie, pour en savoir plus sur ses projets web et collaborations.">
-    <meta name="keywords" content="Contact Emma Fayet, sport, technologie, création web, site vitrine, HTML, CSS">
+    <!-- SEO -->
+    <meta name="description" content="Contactez Emma Fayet via un formulaire élégant et animé.">
     <meta name="author" content="Emma Fayet">
-    <meta name="robots" content="index, follow">
-
-    <!-- Open Graph (Partage réseaux sociaux) -->
-    <meta property="og:title" content="Contact – Passions Sports & Tech | Emma Fayet">
-    <meta property="og:description" content="Contactez Emma Fayet pour en savoir plus sur ses projets web et passions.">
-    <meta property="og:image" content="URL_DE_TON_IMAGE_CONTACT">
-    <meta property="og:url" content="https://emmafayet42-maker.github.io/mon---site/contact.html">
-    <meta property="og:type" content="website">
 
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: #111;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial;
+            background: radial-gradient(circle at top, #0d0d0d, #000);
             color: #fff;
             overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* --- HEADER TRANSPARENT / FLOU --- */
         header {
-            background: #000;
-            padding: 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 15px 40px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.45);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
             z-index: 1000;
-            border-bottom: 2px solid #222;
         }
         header h1 {
-            margin: 0;
-            font-size: 1.8rem;
+            font-size: 1.7rem;
         }
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
-            margin-left: 20px;
-            font-weight: bold;
+            margin-left: 25px;
             padding: 8px 12px;
-            border-radius: 5px;
+            border-radius: 6px;
             transition: 0.3s;
         }
         nav a:hover,
         nav a.active {
-            background: #333;
+            background: rgba(255,255,255,0.15);
         }
 
-        /* HERO */
+        /* --- HERO AVEC MACHINE À ÉCRIRE --- */
         .hero {
             height: 50vh;
-            background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-                        url('https://images.unsplash.com/photo-1556155092-8707de31f9c4') center/cover;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             text-align: center;
             padding: 20px;
-            animation: fadeIn 1.5s ease-out;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+            url('https://images.unsplash.com/photo-1556155092-8707de31f9c4') center/cover;
         }
+
         .hero h2 {
             font-size: 3rem;
-            margin: 0;
-            animation: slideDown 1s;
+            animation: typing 3s steps(20) forwards;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid #4da3ff;
+            width: 0;
         }
+
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 320px; }
+        }
+
         .hero p {
+            margin-top: 15px;
             font-size: 1.3rem;
-            opacity: 0.9;
-            margin-top: 10px;
-            animation: fadeIn 2s;
+            opacity: 0;
+            animation: fadeIn 2s forwards 2.5s;
         }
 
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
 
-        /* MAIN */
+        /* --- CONTENU PRINCIPAL --- */
         main {
-            padding: 60px 20px;
+            padding: 100px 20px;
             max-width: 700px;
             margin: auto;
         }
-        h2.section-title {
+
+        .section-title {
             text-align: center;
-            margin-bottom: 40px;
             font-size: 2.2rem;
-            animation: fadeIn 1.5s;
+            margin-bottom: 30px;
         }
 
-        /* CONTACT INFO */
+        /* INFO + ICONES */
         .contact-info {
             text-align: center;
             margin-bottom: 40px;
             font-size: 1.1rem;
         }
-        .contact-info strong {
-            font-size: 1.2rem;
+        .icons {
+            margin-top: 15px;
+        }
+        .icons a {
+            font-size: 1.8rem;
+            margin: 0 10px;
             color: #4da3ff;
+            transition: 0.3s;
+        }
+        .icons a:hover {
+            color: #75baff;
         }
 
-        /* FORMULAIRE */
+        /* --- FORMULAIRE EN VERRE (GLASSMORPHISM) --- */
         form {
             display: flex;
             flex-direction: column;
-            background: #1a1a1a;
+            background: rgba(255,255,255,0.05);
             padding: 30px;
             border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            animation: fadeIn 1.5s;
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transform: translateY(40px);
+            opacity: 0;
+            transition: 0.8s;
         }
+        form.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
         label {
             margin: 10px 0 5px;
             font-weight: bold;
             color: #ddd;
         }
-        input, textarea {
+        input,
+        textarea {
             padding: 12px;
             border-radius: 8px;
-            border: 1px solid #333;
-            background: #222;
-            color: #fff;
+            border: none;
+            background: rgba(255,255,255,0.08);
+            color: white;
             margin-bottom: 15px;
-            font-size: 1rem;
             transition: 0.3s;
         }
         input:focus, textarea:focus {
-            border-color: #4da3ff;
+            background: rgba(255,255,255,0.12);
             outline: none;
-            box-shadow: 0 0 5px #4da3ff;
-        }
-        textarea {
-            height: 160px;
-            resize: vertical;
+            box-shadow: 0 0 8px #4da3ff;
         }
 
         button {
             background: #4da3ff;
-            border: none;
-            padding: 14px;
             color: #000;
+            padding: 14px;
             font-size: 1.1rem;
             font-weight: bold;
             border-radius: 8px;
+            border: none;
             cursor: pointer;
             transition: 0.3s;
-            text-transform: uppercase;
             letter-spacing: 1px;
         }
         button:hover {
@@ -168,60 +180,82 @@
             transform: translateY(-2px);
         }
 
-        /* FOOTER */
+        /* --- FOOTER --- */
         footer {
             text-align: center;
             padding: 20px;
             background: #000;
-            border-top: 2px solid #222;
-            margin-top: 50px;
+            border-top: 1px solid #222;
+            margin-top: 60px;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Passions Sports & Technologies</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="about.html">À propos</a>
-            <a href="contact.html" class="active">Contact</a>
-        </nav>
-    </header>
+<header>
+    <h1>Passions Sports & Technologies</h1>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À propos</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+</header>
 
-    <div class="hero">
-        <h2>Contactez-moi</h2>
-        <p>Je serais ravie de lire votre message ✨</p>
-    </div>
+<div class="hero">
+    <h2>Contactez-moi</h2>
+    <p>Je serais ravie de lire votre message ✨</p>
+</div>
 
-    <main>
-        <h2 class="section-title">Envoyer un message</h2>
+<main>
+    <h2 class="section-title">Envoyer un message</h2>
 
-        <p class="contact-info">
-            Vous pouvez aussi m’écrire directement ici :<br>
-            <strong>emygecour@gmail.com</strong>
-        </p>
+    <p class="contact-info">
+        Vous pouvez aussi écrire directement ici :<br>
+        <strong style="color:#4da3ff;">emygecour@gmail.com</strong>
 
-        <form action="#" method="post">
-            <label for="nom">Nom :</label>
-            <input type="text" id="nom" name="nom" placeholder="Ton nom" required>
+        <div class="icons">
+            <a href="mailto:emygecour@gmail.com">📧</a>
+            <a href="https://instagram.com" target="_blank">📸</a>
+            <a href="https://github.com" target="_blank">💻</a>
+        </div>
+    </p>
 
-            <label for="email">Email :</label>
-            <input type="email" id="email" name="email" placeholder="Ton email (optionnel)">
+    <form id="contactForm">
+        <label for="nom">Nom :</label>
+        <input type="text" id="nom" name="nom" placeholder="Ton nom" required>
 
-            <label for="message">Message :</label>
-            <textarea id="message" name="message" placeholder="Ton message..." required></textarea>
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" placeholder="Ton email">
 
-            <button type="submit">Envoyer</button>
-        </form>
-    </main>
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" placeholder="Ton message..." required></textarea>
 
-    <footer>
-        <p>&copy; 2025 Mon site web - Tous droits réservés</p>
-    </footer>
+        <button type="submit">Envoyer</button>
+    </form>
+</main>
+
+<footer>
+    &copy; 2025 Mon site web • Tous droits réservés
+</footer>
+
+<script>
+    /* --- FORM APPARITION AU SCROLL --- */
+    const form = document.getElementById("contactForm");
+
+    const observer = new IntersectionObserver((entries)=>{
+        entries.forEach(entry=>{
+            if(entry.isIntersecting){
+                form.classList.add("visible");
+            }
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(form);
+</script>
 
 </body>
 </html>
+
 
 
 

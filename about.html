@@ -5,30 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>À propos – Passions Sports & Tech | Emma Fayet</title>
 
-    <!-- SEO & Référencement -->
-    <meta name="description" content="Découvrez Emma, passionnée de technologie et de sport, et fascinée par le monde de la gendarmerie. Apprenez-en plus sur ses passions et son approche du web.">
-    <meta name="keywords" content="Emma Fayet, gendarmerie, sport, technologie, site vitrine, HTML, CSS, passion web">
+    <!-- SEO -->
+    <meta name="description" content="Découvrez Emma, passionnée de technologie et de sport. Apprenez-en plus sur ses centres d'intérêt et son approche du web.">
+    <meta name="keywords" content="Emma Fayet, gendarmerie, sport, technologie, HTML, CSS, passions">
     <meta name="author" content="Emma Fayet">
-    <meta name="robots" content="index, follow">
 
-    <!-- Open Graph pour partage sur réseaux sociaux -->
+    <!-- Open Graph -->
     <meta property="og:title" content="À propos – Passions Sports & Tech | Emma Fayet">
-    <meta property="og:description" content="Découvrez Emma, passionnée de technologie et de sport, et fascinée par le monde de la gendarmerie.">
+    <meta property="og:description" content="Découvrez Emma, passionnée par la technologie, le sport et la gendarmerie.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1599058917212-d750089bc09c">
-    <meta property="og:url" content="https://emmafayet42-maker.github.io/mon---site/about.html">
     <meta property="og:type" content="website">
 
-    <!-- Favicon (optionnel mais recommandé) -->
+    <!-- Icône -->
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
-    <!-- Styles CSS -->
+    <!-- Styles -->
     <style>
         body {
             margin: 0;
             font-family: Arial, sans-serif;
             background: #111;
             color: #fff;
-            overflow-x: hidden;
         }
 
         /* HEADER */
@@ -40,21 +37,19 @@
             align-items: center;
             position: sticky;
             top: 0;
-            z-index: 1000;
             border-bottom: 2px solid #222;
         }
         header h1 {
-            margin: 0;
             font-size: 1.8rem;
+            margin: 0;
         }
         nav a {
-            color: #fff;
+            color: white;
             text-decoration: none;
             margin-left: 20px;
-            font-weight: bold;
             padding: 8px 12px;
             border-radius: 5px;
-            transition: 0.3s;
+            font-weight: bold;
         }
         nav a:hover,
         nav a.active {
@@ -72,35 +67,14 @@
             flex-direction: column;
             text-align: center;
             padding: 20px;
-            animation: fadeIn 1.5s ease-out;
         }
         .hero h2 {
             font-size: 3rem;
             margin: 0;
-            animation: slideDown 1s;
         }
         .hero p {
             font-size: 1.3rem;
-            margin-top: 10px;
             opacity: 0.9;
-            animation: fadeIn 2s;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* TITRES DE SECTION */
-        h2 {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2.4rem;
-            animation: fadeIn 1.2s ease-out;
         }
 
         main {
@@ -114,7 +88,6 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-            animation: fadeIn 1.5s;
         }
         .card {
             background: #1a1a1a;
@@ -125,40 +98,28 @@
         }
         .card:hover {
             transform: translateY(-7px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.6);
         }
         .card img {
             width: 100%;
             border-radius: 10px;
             margin-bottom: 15px;
-            transition: 0.3s;
         }
-        .card:hover img {
-            transform: scale(1.05);
-        }
+
         .card h3 {
             margin: 10px 0;
             font-size: 1.4rem;
-        }
-        .card p {
-            opacity: 0.85;
         }
 
         /* SECTION WEB */
         .web-section {
             text-align: center;
             margin-top: 80px;
-            animation: fadeIn 1.5s;
         }
         .web-section img {
             margin-top: 20px;
             border-radius: 12px;
             width: 90%;
             max-width: 700px;
-            transition: 0.3s;
-        }
-        .web-section img:hover {
-            transform: scale(1.03);
         }
 
         /* FOOTER */
@@ -185,67 +146,72 @@
 
     <div class="hero">
         <h2>À propos de moi</h2>
-        <p>Je suis passionnée de technologie et de sport !</p>
+        <p>Je suis passionnée de technologie et de sport.</p>
     </div>
 
     <main>
 
         <section>
             <h2>Qui suis-je ?</h2>
+
             <p style="font-size: 1.15rem; text-align: center; max-width: 800px; margin: auto;">
-                Je m'appelle Emma et j'apprends à coder des sites web. Curieuse, créative et motivée, 
-                j'adore découvrir et apprendre de nouvelles choses.
+                Je m'appelle Emma et j'apprends à créer des sites web. J'aime apprendre, découvrir 
+                et développer ma créativité. 
             </p>
+
             <p style="font-size: 1.15rem; text-align: center; margin-top: 20px; opacity: 0.9;">
-                Et surtout… j’adore le monde de la gendarmerie !
+                Je m’intéresse aussi beaucoup au monde de la gendarmerie.
             </p>
 
             <div class="grid">
+
                 <div class="card">
-                    <img src="https://pbs.twimg.com/media/F01G1c3XgAEnqa8.jpg" alt="Valeurs Gendarmerie" />
-                    <h3>Les Valeurs de la Gendarmerie</h3>
-                    <p>Discipline, respect, courage, engagement.</p>
+                    <img src="https://pbs.twimg.com/media/F01G1c3XgAEnqa8.jpg" alt="Valeurs de la gendarmerie">
+                    <h3>Les valeurs</h3>
+                    <p>Respect, discipline, courage et engagement.</p>
                 </div>
 
                 <div class="card">
-                    <img src="https://www.emploipublic.fr/mediatheque_edito/0/3/3/000031330_600x400_c.gif" alt="Missions de la Gendarmerie" />
+                    <img src="https://www.emploipublic.fr/mediatheque_edito/0/3/3/000031330_600x400_c.gif" alt="Missions de la gendarmerie">
                     <h3>Les missions</h3>
-                    <p>Protéger, secourir, enquêter et assurer la sécurité du quotidien.</p>
+                    <p>Protéger, secourir, enquêter et assurer la sécurité.</p>
                 </div>
 
                 <div class="card">
-                    <img src="https://www.gendarmerie.interieur.gouv.fr/var/site/storage/images/_aliases/dsfr_md/0/4/6/4/354640-1-fre-FR/57c0470749e9-EOGN-2G-STG_Trinome-2023-GND_Brice_Lapointe-110.jpg" alt="Esprit d'équipe" />
-                    <h3>L'esprit d’équipe</h3>
-                    <p>Cohésion, solidarité et confiance au sein des unités.</p>
+                    <img src="https://www.gendarmerie.interieur.gouv.fr/var/site/storage/images/_aliases/dsfr_md/0/4/6/4/354640-1-fre-FR/57c0470749e9-EOGN-2G-STG_Trinome-2023-GND_Brice_Lapointe-110.jpg" alt="Esprit d'équipe en gendarmerie">
+                    <h3>L’esprit d’équipe</h3>
+                    <p>Cohésion, solidarité et confiance.</p>
                 </div>
 
                 <div class="card">
-                    <img src="https://www.police-nationale.net/wp-content/uploads/2011/03/gendarmerie-air-14-juillet.jpg" alt="Servir et protéger" />
+                    <img src="https://www.police-nationale.net/wp-content/uploads/2011/03/gendarmerie-air-14-juillet.jpg" alt="Servir et protéger">
                     <h3>Servir et protéger</h3>
-                    <p>Une vocation tournée vers l’aide et la protection des citoyens.</p>
+                    <p>Une vocation tournée vers la protection des citoyens.</p>
                 </div>
 
                 <div class="card">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjB-IgkkGCZmalNEzl_pCyLqif5xCWAQ_TA&s" alt="Cadets Gendarmerie" />
-                    <h3>Les Cadets de la Gendarmerie</h3>
-                    <p>Une formation basée sur le devoir, le respect et la rigueur.</p>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRTjB-IgkkGCZmalNEzl_pCyLqif5xCWAQ_TA&s" alt="Cadets de la gendarmerie">
+                    <h3>Les Cadets</h3>
+                    <p>Une formation basée sur le respect et la rigueur.</p>
                 </div>
 
                 <div class="card">
-                    <img src="https://www.opex360.com/wp-content/uploads/gendarmerie-20161027.jpg" alt="Engagement Gendarmerie" />
+                    <img src="https://www.opex360.com/wp-content/uploads/gendarmerie-20161027.jpg" alt="Engagement gendarmerie">
                     <h3>L’engagement</h3>
-                    <p>Choisir la gendarmerie : une vie au service des autres.</p>
+                    <p>Choisir la gendarmerie, c’est servir les autres.</p>
                 </div>
+
             </div>
         </section>
 
         <section class="web-section">
             <h2>Mon approche du web</h2>
             <p style="max-width: 700px; margin: auto; font-size: 1.15rem;">
-                J’aime créer des expériences web modernes où créativité, design et technologie 
-                s’harmonisent pour donner vie à des projets uniques.
+                J’aime créer des pages web simples, modernes et agréables à utiliser. 
+                Le web me permet d’exprimer ma créativité.
             </p>
-            <img src="https://cdn.pixabay.com/photo/2016/11/23/14/45/designer-1851186_960_720.jpg" alt="Design et développement">
+
+            <img src="https://cdn.pixabay.com/photo/2016/11/23/14/45/designer-1851186_960_720.jpg" alt="Design et développement web">
         </section>
 
     </main>
@@ -256,12 +222,6 @@
 
 </body>
 </html>
-
-
-
-
-
-
 
 
 
